@@ -1,0 +1,15 @@
+<div class="d-flex align-items-center justify-content-center">
+  <h1>Welcome</h1>
+</div>
+<div class="d-flex align-items-center justify-content-center">
+  <% if logged_in? %>
+    <h1>You are Logged In, <%= current_user.username %></h1>
+  <%else %>
+    <div class="d-flex align-items-center justify-content-center">
+      <h1> Please use the options</h1>
+    </div>
+      <%= button_to "Login", '/login', method: :get%>
+      <%= button_to "Sign Up", '/users/new', method: :get%>
+
+  <%end %>
+</div>
